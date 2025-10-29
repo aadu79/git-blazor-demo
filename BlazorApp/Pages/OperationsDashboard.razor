@@ -1,0 +1,43 @@
+﻿@page "/operations"
+@layout Shared.DashboardLayout
+
+
+<div class="dashboard-container">
+    <h2>Job Details</h2>
+
+    <div class="card-container">
+        @foreach (var job in jobs)
+        {
+            <div class="job-card @(job.JobStatus == "Out for Delivery" ? "active" : "")">
+                <div class="job-header">
+                    <p><strong>Job ID:</strong> @job.JobId</p>
+                    <p><strong>Status:</strong> @job.JobStatus</p>
+                </div>
+
+                <div class="job-body">
+                    <p><strong>ETA:</strong> @job.ETA</p>
+                    <p><strong>ETD:</strong> @job.ETD</p>
+                    <p>@job.From → @job.To</p>
+                </div>
+
+                <div class="job-actions">
+                    <button class="approve-btn">Approve</button>
+                    <button class="view-btn">View</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    // Dummy data directly inside Razor
+    private List<dynamic> jobs = new()
+    {
+        new { JobId = "F124G375", JobStatus = "Out for Delivery", ETA = "24/09/2025", ETD = "01/10/2025", From = "123 Industrial Road", To = "456 Commerce Blvd" },
+        new { JobId = "F124G376", JobStatus = "Cargo Received", ETA = "24/09/2025", ETD = "01/10/2025", From = "123 Industrial Road", To = "456 Commerce Blvd" },
+        new { JobId = "F124G377", JobStatus = "In-Transit", ETA = "24/09/2025", ETD = "01/10/2025", From = "123 Industrial Road", To = "456 Commerce Blvd" },
+        new { JobId = "F124G378", JobStatus = "In-Transit", ETA = "24/09/2025", ETD = "01/10/2025", From = "123 Industrial Road", To = "456 Commerce Blvd" },
+        new { JobId = "F124G379", JobStatus = "In-Transit", ETA = "24/09/2025", ETD = "01/10/2025", From = "123 Industrial Road", To = "456 Commerce Blvd" }
+    };
+}
+
