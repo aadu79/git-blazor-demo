@@ -1,0 +1,37 @@
+﻿@using BlazorApp.Models
+
+<div class="status-stepper">
+    @foreach (var (step, index) in Steps.Select((s, i) => (s, i)))
+    {
+        <div class="step @(GetStepClass(step))">
+            <div class="circle">@(index + 1)</div>
+            <div class="label">@step</div>
+
+            @if (index < Steps.Count - 1)
+            {
+                <div class="line"></div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public List<string> Steps { get; set; } = new() { "Applied", "Screening", "Interview", "Offer", "Hired" };
+
+    [Parameter]
+    public string CurrentStatus { get; set; } = "Applied";
+
+    private string GetStepClass(string step)
+    {
+        var currentIndex = Steps.IndexOf(CurrentStatus);
+        var stepIndex = Steps.IndexOf(step);
+
+        if (stepIndex < currentIndex)
+            return "completed";
+        else if (stepIndex == currentIndex)
+            return "current";
+        else
+            return "upcoming";
+    }
+}

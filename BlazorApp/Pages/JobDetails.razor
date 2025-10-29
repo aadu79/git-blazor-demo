@@ -1,0 +1,133 @@
+﻿@page "/jobdetails"
+@using System.ComponentModel.DataAnnotations
+
+<link href="css/jobdetails.css" rel="stylesheet" />
+
+<EditForm Model="@job" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="jobdetails-container">
+        <div class="job-card">
+            <div class="job-header">
+                <h3>Job Details</h3>
+            </div>
+
+            <div class="job-content">
+                <!-- Left section -->
+                <div class="job-left">
+                    <div class="form-group">
+                        <label>Job ID</label>
+                        <InputText @bind-Value="job.JobId" class="form-control" />
+                        <ValidationMessage For="@(() => job.JobId)" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Client Name</label>
+                        <InputText @bind-Value="job.ClientName" class="form-control" />
+                        <ValidationMessage For="@(() => job.ClientName)" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Consignee Name</label>
+                        <InputText @bind-Value="job.ConsigneeName" class="form-control" />
+                        <ValidationMessage For="@(() => job.ConsigneeName)" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>ETA</label>
+                        <InputDate @bind-Value="job.ETA" class="form-control" />
+                        <ValidationMessage For="@(() => job.ETA)" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>ETD</label>
+                        <InputDate @bind-Value="job.ETD" class="form-control" />
+                        <ValidationMessage For="@(() => job.ETD)" />
+                    </div>
+
+                    <div class="location">
+                        <span class="from">@job.FromLocation</span>
+                        <span class="arrow">➡️</span>
+                        <span class="to">@job.ToLocation</span>
+                    </div>
+                </div>
+
+                <!-- Right section -->
+                <div class="job-right">
+                    <h4>
+                        Current Status:
+                        <span class="status-badge">@job.CurrentStatus</span>
+                    </h4>
+                    <div class="status-list">
+                        @foreach (var status in statusOptions)
+                        {
+                            <div class="status-item @(job.CurrentStatus == status ? "active" : "")"
+                                 @onclick="() => SetStatus(status)">
+                                <input type="radio" name="status" checked="@(job.CurrentStatus == status)" />
+                                <label>@status</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Buttons -->
+            <div class="job-actions">
+                <button type="button" class="btn blue">View POD</button>
+                <button type="submit" class="btn green">Approve</button>
+                <button type="button" class="btn red">Reject</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    private JobModel job = new()
+    {
+        JobId = "#3476",
+        ClientName = "Muhammad Nihal",
+        ConsigneeName = "Muhammad Fariz",
+        ETA = new DateTime(2025, 9, 24),
+        ETD = new DateTime(2025, 10, 1),
+        FromLocation = "123 Industrial Road",
+        ToLocation = "456 Commerce Blvd",
+        CurrentStatus = "Cargo Received"
+    };
+
+    private List<string> statusOptions = new()
+    {
+        "Shipment Confirmation",
+        "Cargo Received",
+        "In-Transit",
+        "Arrival at Destination",
+        "Customs Clearance Complete",
+        "Arrival at Destination Hub",
+        "Out for Delivery",
+        "Delay Notification",
+        "Delivery Confirmation",
+        "Feedback/NPS"
+    };
+
+    private void SetStatus(string status)
+    {
+        job.CurrentStatus = status;
+    }
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine("Form submitted successfully!");
+    }
+
+    public class JobModel
+    {
+        [Required] public string JobId { get; set; }
+        [Required] public string ClientName { get; set; }
+        [Required] public string ConsigneeName { get; set; }
+        [Required] public DateTime ETA { get; set; }
+        [Required] public DateTime ETD { get; set; }
+        [Required] public string FromLocation { get; set; } = "123 Industrial Road";
+        [Required] public string ToLocation { get; set; } = "456 Commerce Blvd";
+        [Required] public string CurrentStatus { get; set; }
+    }
+}

@@ -1,0 +1,135 @@
+﻿.jobdetails-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(240, 240, 240, 0.7);
+}
+
+.job-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    padding: 30px;
+    position: relative;
+}
+
+.job-header h3 {
+    border-bottom: 2px solid #f05a7a;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+.job-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+.job-left, .job-right {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+    .form-group label {
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+.form-control {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+    .location .arrow {
+        margin: 0 10px;
+    }
+
+.job-right {
+    background-color: #fafafa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.status-badge {
+    background-color: #e6f8ec;
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 14px;
+}
+
+.status-list {
+    margin-top: 15px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    .status-item.active {
+        background-color: #ffecec;
+        border-radius: 8px;
+    }
+
+    .status-item input {
+        margin-right: 8px;
+    }
+
+.job-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+    gap: 15px;
+}
+
+.btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+    .btn.blue {
+        background-color: #007bff;
+    }
+
+    .btn.green {
+        background-color: #28a745;
+    }
+
+    .btn.red {
+        background-color: #dc3545;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+
+.validation-message {
+    color: red;
+    font-size: 13px;
+}
