@@ -67,12 +67,26 @@
     flex: 1;
 }
 
+.nav-btn {
+    background-color: lightpink;
+    margin-top: 20px;
+    color: red;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 25px;
+    font-size: 12px;
+    width: 40;
+    height: 10;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
 /* Sidebar stays on the left */
 .sidebar {
     width: 220px;
     background-color: white;
     height: 100vh;
-    padding: 20px;
+    padding: 0px;
     position:fixed;
     top: 0; /* Start at the very top */
     left: 0;
@@ -87,3 +101,108 @@
     padding: 20px 30px;
     background-color: #f7f7f7;
 }
+
+
+input[type="text"] {
+    width: 250px; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px; 
+    font-size: 16px;
+    outline: none; 
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); 
+    transition: box-shadow 0.3s ease;
+}
+
+    input[type="text"]:focus {
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.6); /* Red glow when focused */
+    }
+
+input::placeholder {
+    color: #999; /* Placeholder text color */
+
+}
+
+.sidebar-line {
+    border: none;
+    height: 1px; /* thickness of the line */
+    background-color: darkgrey; /* make line visible */
+    margin: 15px 0; /* spacing above and below */
+    width: 100%; /* ensure it spans sidebar width */
+    border-radius: 2px; /* slightly rounded ends */
+    display: block; /* ensures it renders correctly */
+}
+
+
+.header-bar h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.search-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space between search box and profile image */
+}
+
+    .search-profile input {
+        padding: 8px 16px;
+        border: 1px solid #ccc;
+        border-radius: 20px; /* makes it oval */
+        outline: none;
+        font-size: 0.95rem;
+        width: 220px; /* adjust width as needed */
+        transition: border-color 0.3s ease;
+    }
+
+        .search-profile input:focus {
+            border-color: #888;
+        }
+
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* this makes it round */
+    object-fit: cover; /* ensures it doesn’t stretch */
+    border: 2px solid #ccc;
+    overflow: hidden; /* hides any corners */
+    display: block; /* ensures it's treated like a block element */
+    background-color: #f0f0f0; /* fallback if image fails */
+}
+
+
+    .profile-pic:hover {
+        transform: scale(1.05);
+        border-color: #aaa;
+    }
+/*.nav-btn {
+    background-color: lightpink;
+    margin-top: 20px;
+    color: red;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 25px;
+    font-size: 12px;
+    display: flex;*/ /* align logo + text */
+    /*align-items: center;
+    justify-content: center;
+    gap: 8px;*/ /* space between logo & text */
+    /*cursor: pointer;
+    transition: background 0.3s ease;
+}*/
+
+    .nav-btn img.nav-logo {
+        width: 18px; /* adjust logo size */
+        height: 18px;
+        border-radius: 50%; /* make logo circular */
+        background-color:lightpink;
+        padding: 2px;
+    }
+
+
+
+
+
+

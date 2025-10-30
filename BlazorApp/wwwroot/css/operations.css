@@ -25,7 +25,24 @@ h2 {
     .job-card.active {
         background: black;
         color: white;
+
     }
+        .job-card.active .job-info .value,
+        .job-card.active .job-info .label,
+        .job-card.active .eta p,
+        .job-card.active .etd p,
+        .job-card.active .from,
+        .job-card.active .to {
+            color: #fff !important;
+            opacity: 1 !important;
+
+        }
+        .job-card.active .job-logo img {
+            background-color: #000;
+            border: 2px solid #ff5c5c; /* red border for accent */
+            padding: 6px;
+            border-radius: 50%;
+        }
 
     .job-card:hover {
         transform: translateY(-5px);
@@ -44,7 +61,8 @@ h2 {
 
 .job-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 10px;
     margin-top: 10px;
 }
 
@@ -64,3 +82,203 @@ h2 {
 .view-btn {
     background-color: #f87171; /* red */
 }
+
+
+
+.card-line {
+    border: none; /* Remove default HR border */
+    height: 2px; /* Thickness of the line */
+    background-color:gray; /* Line color */
+    margin: 10px 0; /* Space above and below */
+    border-radius: 2px;
+}
+
+
+
+
+.job-logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff4d4d; /* 🔴 red border */
+    padding: 6px;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(255, 77, 77, 0.5); /* subtle red glow */
+}
+
+
+.job-info-row {
+    color:black;
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.job-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111;
+    margin-top: 2px;
+}
+
+
+.eta-etd-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.eta p, .etd p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.job-body p {
+    margin: 4px 0;
+}
+.from-to-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    margin-top: 6px;
+}
+
+.from {
+    text-align: left;
+    color: #333;
+    font-weight: 500;
+}
+
+.to {
+    text-align: right;
+    color: #333;
+    font-weight: 500;
+}
+.arrow {
+    text-align: center;
+    width: 10%;
+    font-size:2rem;
+    color: gray;
+    
+}
+.pagination-container {
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 40px;
+    padding-bottom: 20px;
+}
+
+/* Pagination layout */
+.pagination {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    /* Previous / Next buttons */
+    .pagination .nav-btn {
+        background: none;
+        border: none;
+        color: #444;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        transition: color 0.3s ease;
+    }
+
+        .pagination .nav-btn:hover {
+            color: #e63946;
+        }
+
+        .pagination .nav-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+    /* Page numbers */
+    .pagination .page-number {
+        border: none;
+        background-color: transparent;
+        color: #333;
+        font-size: 14px;
+        font-weight: 500;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        /* Hover effect */
+        .pagination .page-number:hover {
+            background-color: #f2f2f2;
+        }
+
+        /* Active page number */
+        .pagination .page-number.active {
+            background-color: #ff5c5c;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Filter button styling */
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    background-color: #fff;
+    border: 1.5px solid #ff6b6b;
+    color: #ff6b6b;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+    /* Hover effect */
+    .filter-btn:hover {
+        background-color: #ff6b6b;
+        color: #fff;
+    }
+
+/* Icon inside button */
+.filter-icon {
+    font-size: 14px;
+    line-height: 1;
+}
+

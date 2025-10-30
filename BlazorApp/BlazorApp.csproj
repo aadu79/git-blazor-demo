@@ -7,7 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\NewFolder\**" />
+    <Compile Remove="wwwroot\sample-data\GetEmoji - Copy &amp; Paste All Emojis From The Emoji Keyboard - No apps required_files\**" />
+    <Content Remove="wwwroot\NewFolder\**" />
+    <Content Remove="wwwroot\sample-data\GetEmoji - Copy &amp; Paste All Emojis From The Emoji Keyboard - No apps required_files\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\sample-data\GetEmoji - Copy &amp; Paste All Emojis From The Emoji Keyboard - No apps required_files\**" />
+    <None Remove="wwwroot\NewFolder\**" />
+    <None Remove="wwwroot\sample-data\GetEmoji - Copy &amp; Paste All Emojis From The Emoji Keyboard - No apps required_files\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Shared\DashboardLayout.razor" />
+    <Content Remove="wwwroot\sample-data\GetEmoji - Copy &amp; Paste All Emojis From The Emoji Keyboard - No apps required.html" />
   </ItemGroup>
 
   <ItemGroup>
