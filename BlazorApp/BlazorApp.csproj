@@ -7,12 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NewFolder\**" />
     <Compile Remove="wwwroot\NewFolder\**" />
     <Compile Remove="wwwroot\sample-data\GetEmoji - Copy &amp; Paste All Emojis From The Emoji Keyboard - No apps required_files\**" />
+    <Content Remove="NewFolder\**" />
     <Content Remove="wwwroot\NewFolder\**" />
     <Content Remove="wwwroot\sample-data\GetEmoji - Copy &amp; Paste All Emojis From The Emoji Keyboard - No apps required_files\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
     <EmbeddedResource Remove="wwwroot\NewFolder\**" />
     <EmbeddedResource Remove="wwwroot\sample-data\GetEmoji - Copy &amp; Paste All Emojis From The Emoji Keyboard - No apps required_files\**" />
+    <None Remove="NewFolder\**" />
     <None Remove="wwwroot\NewFolder\**" />
     <None Remove="wwwroot\sample-data\GetEmoji - Copy &amp; Paste All Emojis From The Emoji Keyboard - No apps required_files\**" />
   </ItemGroup>
@@ -25,6 +29,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.9" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
 
 </Project>
